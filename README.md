@@ -1,24 +1,37 @@
-# Snake-Game-using-Pygame
 
-Simple Snake Game With Pygame
+# Snake Game
 
-# How to Run this Locally
+A simple snake game built with Python and Pygame.
+
+## Running the Game
+
+```bash
+mkdir ~/Dev/snake-game -p
+cd ~/Dev/snake-game
+uv venv
+uv sync
+uv run main.py
+```
+
+## Dependencies
+
+- pygame
+- tkinter (usually included with Python)
+
+## How to Run this Locally
 
 ### Step 1: Create a Virtual Environment
-```
-cd /path/to/folder
-mkdir snake
-cd snake
-virtualenv .
-source scripts/activate
+
+```bash
+mkdir ~/Dev/snake-game -p
+cd ~/Dev/snake-game
+git clone https://github.com/arvind-4/snake-game.git .
+uv venv
 ```
 
 ### Step 2: Install Dependencies
-```
-cd /path/to/folder
-mkdir src
-cd src
-git clone https://github.com/Arvind-4/Snake-Game-using-Pygame.git .
-pip install -r requirements.txt
-python main.py
+
+```bash
+uv sync
+uv run main.py
 ```
