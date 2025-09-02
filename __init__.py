@@ -1,3 +1,1 @@
-"""
-Snake Game Project Root
-"""
+"""Snake Game Project Root."""
