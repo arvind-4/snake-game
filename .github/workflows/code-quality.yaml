@@ -27,13 +27,13 @@ jobs:
         run: uv sync
 
       - name: Check linting
-        run: uv run ruff check src/
+        run: uv run ruff check .
 
       - name: Check formatting
-        run: uv run ruff format --check src/
+        run: uv run ruff format --check .
 
       - name: Check Bandit Security Scan
-        run: uv run bandit -r src/
+        run: uv run bandit -r snake_game/
 
       - name: Check Dependency Audit
         run: uv run pip-audit -l
