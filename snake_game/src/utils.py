@@ -1,7 +1,7 @@
 """Utility functions for the Snake Game."""
 
 import contextlib
-import random
+import secrets
 import tkinter as tk
 from tkinter import messagebox
 
@@ -11,9 +11,7 @@ from snake_game.src.models import Cube, Snake
 
 
 def draw_grid(w: int, rows: int) -> None:
-    """
-    Draw grid lines on the game surface 
-    """
+    """Draw grid lines on the game surface."""
     sizebtwn: int = w // rows
     x: int = 0
     y: int = 0
@@ -24,14 +22,12 @@ def draw_grid(w: int, rows: int) -> None:
 
 
 def random_snack(rows: int, snake: Snake) -> tuple[int, int]:
-    """
-    Generate a random position for the snack
-    """
+    """Generate a random position for the snack."""
     positions: list[Cube] = snake.body
 
     while True:
-        x: int = random.randrange(rows)
-        y: int = random.randrange(rows)
+        x: int = secrets.randbelow(rows)
+        y: int = secrets.randbelow(rows)
 
         # Check if the position overlaps with any part of the snake
         if len(list(filter(lambda cube: cube.pos == (x, y), positions))) > 0:
@@ -74,5 +70,5 @@ def redraw_window(
     surface.fill((0, 0, 0))
     snake.draw(surface)
     snack.draw(surface)
-    draw_grid(width, rows, surface)
+    draw_grid(width, rows)
     pygame.display.update()

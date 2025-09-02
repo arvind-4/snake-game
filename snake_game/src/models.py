@@ -1,6 +1,4 @@
-"""Game models for the Snake Game.
-Contains the Cube and Snake classes with proper type hints.
-"""
+"""Game models for the Snake Game."""
 
 import pygame
 
@@ -62,10 +60,10 @@ class Cube:
         if eyes:
             centre: int = dis // 2
             radius: int = 3
-            circleMiddle: tuple[int, int] = (i * dis + centre - radius, j * dis + 8)
-            circleMiddle2: tuple[int, int] = (i * dis + dis - radius * 2, j * dis + 8)
-            pygame.draw.circle(surface, (0, 0, 0), circleMiddle, radius)
-            pygame.draw.circle(surface, (0, 0, 0), circleMiddle2, radius)
+            circle_middle: tuple[int, int] = (i * dis + centre - radius, j * dis + 8)
+            circle_middle2: tuple[int, int] = (i * dis + dis - radius * 2, j * dis + 8)
+            pygame.draw.circle(surface, (0, 0, 0), circle_middle, radius)
+            pygame.draw.circle(surface, (0, 0, 0), circle_middle2, radius)
 
 
 class Snake:
@@ -106,7 +104,6 @@ class Snake:
                 self.dirny = 1
                 self.turns[self.head.pos[:]] = [self.dirnx, self.dirny]
         except (KeyError, TypeError):
-            # Handle cases where keys is not a proper pygame keys object (e.g., in tests)
             pass
 
     def move(self) -> None:

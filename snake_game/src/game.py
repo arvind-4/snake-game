@@ -7,7 +7,7 @@ from .utils import message_box, random_snack, redraw_window
 
 
 def main() -> None:
-    """Main game loop."""
+    """Run the main game loop."""
     # Game constants
     width: int = 500
     rows: int = 20
