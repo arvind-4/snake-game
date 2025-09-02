@@ -1,17 +1,6 @@
-
 # Snake Game
 
 A simple snake game built with Python and Pygame.
-
-## Running the Game
-
-```bash
-mkdir ~/Dev/snake-game -p
-cd ~/Dev/snake-game
-uv venv
-uv sync
-uv run main.py
-```
 
 ## Dependencies
 
